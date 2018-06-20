@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <!--<meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">-->
+  <title>Productos | Olé</title>
+
+  <!-- Favicons-->
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
+  <!-- CORE CSS-->
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- Custome CSS-->
+  <link href="css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/sweetalert/sweetalert.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+
+  <style type="text/css">
+    .input-field div.error {
+      position: relative;
+      top: -1rem;
+      left: 0rem;
+      font-size: 0.8rem;
+      color: #FF4081;
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      -o-transform: translateY(0%);
+      transform: translateY(0%);
+    }
+
+    .input-field label.active {
+      width: 100%;
+    }
+
+    .left-alert input[type=pupc]+label:after,
+    .left-alert input[type=pdescripcion]+label:after,
+    .left-alert input[type=pfoto]+label:after,
+    .left-alert input[type=pcodigo]+label:after,
+    .left-alert input[type=pfoto]+label:after,
+    .left-alert input[type=alto]+label:after,
+    .left-alert input[type=ancho]+label:after,
+    .left-alert input[type=espesor]+label:after,
+    .left-alert textarea.materialize-textarea+label:after {
+      left: 0px;
+    }
+
+    .right-alert input[type=pupc]+label:after,
+    .right-alert input[type=pdescripcion]+label:after,
+    .right-alert input[type=pfoto]+label:after,
+    .right-alert input[type=pcodigo]+label:after,
+    .right-alert input[type=pfoto]+label:after,
+    .right-alert input[type=alto]+label:after,
+    .right-alert input[type=ancho]+label:after,
+    .right-alert input[type=espesor]+label:after,
+    .right-alert textarea.materialize-textarea+label:after {
+      right: 70px;
+    }
+
+    th {
+      font-size: 12px;
+    }
+
+    td {
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <header id="header" class="page-topbar">
+    <div class="navbar-fixed">
+      <nav class="navbar-color">
+        <div class="nav-wrapper">
+          <ul class="left">
+            <li>
+              <h1 class="logo-wrapper">
+                <a href="index.html" class="brand-logo darken-1">
+                  <img src="images/materialize-logo.png" alt="materialize logo">
+                </a>
+                <span class="logo-text">Materialize</span>
+              </h1>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div id="main">
+    <div class="wrapper">
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+          <div id="sidemenu_html"></div>
+        </ul>
+        <a data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan">
+          <i class="mdi-navigation-menu"></i>
+        </a>
+      </aside>
+
+      <section id="content">
+        <div id="breadcrumbs-wrapper" class=" grey lighten-3">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h5 class="breadcrumbs-title">Agregar Producto</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <br><br>
+          <center>
+            <a class="waves-effect waves-light btn modal-trigger light-blue" href="#modal5"><i class="mdi-image-control-point circle left"></i>Agregar producto</a>
+            <div role="tabpanel" class="tab-pane" id="productos">
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input class="form-control" name="buscar" type="search" placeholder="Buscar nombre..." autofocus style="width:250px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </center>
+          <br><br>
+          <div class="col s12 m6 l4">
+            <div class="col s12 m6 l4">
+              <div id="contenido"></div>
+            </div>
+          </div>
+      </section>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal5" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-cyan">
+            <h4 class="modal-title" id="largeModalLabel">Agregar Producto</h4>
+          </div>
+          <form id="ag_producto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col s12">
+                  <label for="pupc">UPC</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="pupc" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12">
+                  <label for="pdescripcion">Descripción</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="pdescripcion" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12">
+                  <label for="pcodigo">Código</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="pcodigo" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s4">
+                  <label for="alto">Alto</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="alto" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s4">
+                  <label for="ancho">Ancho</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="ancho" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s4">
+                  <label for="espesor">Espesor</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="espesor" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="waves-effect waves-light btn light-blue modal-action">Agregar</button>
+              <button type="button" class="waves-effect waves-light btn grey modal-action modal-close" data-dismiss="modal">Cerrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal_edit" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-cyan">
+            <h4 class="modal-title" id="largeModalLabel">Editar Producto</h4>
+          </div>
+          <form id="editar_producto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col s12">
+                  <label for="pupc">UPC</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="mupc" class="form-control">
+                      <input type="hidden" name="producto_id" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12">
+                  <label for="pdescripcion">Descripción</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="mdescripcion" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12">
+                  <label for="pcodigo">Código Olé</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="mcodigo" class="form-control" readonly="1">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s4">
+                  <label for="alto">Alto</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="malto" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s4">
+                  <label for="ancho">Ancho</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="mancho" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col s4">
+                  <label for="espesor">Espesor</label>
+                  <div class="form-group">
+                    <div class="form-line">
+                      <input type="text" name="mespesor" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="waves-effect waves-light btn light-blue modal-action">Guardar</button>
+              <button type="button" class="waves-effect waves-light btn grey modal-action modal-close" data-dismiss="modal">Cerrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+          <span class="right"> Diseñado y Desarrollado por <a class="grey-text text-lighten-4" href="http://www.interglobalcs.com">InterGlobalCS</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+    <!--angularjs-->
+    <script type="text/javascript" src="js/plugins/angular.min.js"></script>
+    <!--materialize js-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!--prism -->
+    <script type="text/javascript" src="js/plugins/prism/prism.js"></script>
+    <!--scrollbar-->
+    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <!-- data-tables -->
+    <script type="text/javascript" src="js/plugins/data-tables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/data-tables/data-tables-script.js"></script>
+    <!--jquery-validation-->
+    <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
+    <!--sweetalert -->
+    <script type="text/javascript" src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="js/plugins.min.js"></script>
+    <!--custom-script.js - Add your own theme custom JS-->
+    <script type="text/javascript" src="js/custom-script.js"></script>
+    <!--productos_funciones.js - All functions for products -->
+    <script type="text/javascript" src="js/productos_funciones.js"></script>
+    <!--vars.js - Some functions we create for development -->
+    <script type="text/javascript" src="js/vars.js"></script>
+
+    <script>
+      $(document).ready(function() {
+
+        consulta_permisos_admin(id_user);
+
+        cargar_menu(id_user);
+
+      });
+    </script>
+
+</body>
+
+</html>

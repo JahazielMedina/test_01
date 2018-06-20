@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+  <title>Promotores</title>
+  <!-- Favicons-->
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
+  <!-- CORE CSS-->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- Custome CSS-->
+  <link href="css/custom/custom.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/sweetalert/sweetalert.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Start Page Loading -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <header id="header" class="page-topbar">
+    <!-- start header nav-->
+    <div class="navbar-fixed">
+      <nav class="navbar-color">
+        <div class="nav-wrapper">
+          <ul class="left">
+            <li>
+              <h1 class="logo-wrapper">
+                <a href="index.html" class="brand-logo darken-1">
+                  <img src="images/materialize-logo.png" alt="materialize logo">
+                </a>
+                <span class="logo-text">Promociones</span>
+              </h1>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- START MAIN -->
+  <div id="main">
+    <div class="wrapper">
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+          <div id="sidemenu_html"></div>
+        </ul>
+        <a data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan">
+          <i class="mdi-navigation-menu"></i>
+        </a>
+      </aside>
+
+      <div id="breadcrumbs-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <h5 class="breadcrumbs-title">Promotores</h5>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="promotores">
+              <div class="title_right">
+                <div class="title_right">
+                  <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                      <input class="form-control" name="buscar" type="search" placeholder="Buscar nombre..." autofocus>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <center>
+              <a class="waves-effect waves-light btn modal-trigger  light-blue " href="#modal_add_promotor"><i class="mdi-image-control-point circle left"></i>Agregar promotor</a>
+            </center>
+          </div>
+        </div>
+      </div>
+      <!-- START CONTENT -->
+      <div id=contenido style="margin-bottom:150px;"></div>
+      <div class="col s12 m12 l12">
+        <div id="modal_add_promotor" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Nuevo Promotor</h4>
+            <div id="basic-form" class="section">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <div class="card-panel">
+                    <h4 class="header2">Información básica</h4>
+                    <div class="row">
+                      <form id="add_promotor">
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col s12">
+                              <label for="nombre">Nombre</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="nombre" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="matricula">Matrícula</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="matricula" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="ruta">Ruta</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="ruta" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="telefono">Teléfono</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="telefono" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="correo">Correo</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="correo" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="waves-effect waves-light btn light-blue modal-action">Agregar</button>
+                          <button type="button" class="waves-effect waves-light btn grey modal-action modal-close" data-dismiss="modal">CLOSE</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m12 l12">
+        <div id="modal6" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Nuevo Promotor</h4>
+            <div id="basic-form_edit" class="section">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <div class="card-panel">
+                    <h4 class="header2">Información básica</h4>
+                    <div class="row">
+                      <form id="edit_promotor">
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col s12">
+                              <label for="nombre">Nombre</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="nombre_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="matricula">Matrícula</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="matricula_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="ruta">Ruta</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="ruta_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="telefono">Teléfono</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="telefono_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="correo">Correo</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="correo_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="waves-effect waves-light btn light-blue modal-action">Agregar</button>
+                          <button type="button" class="waves-effect waves-light btn grey modal-action modal-close" data-dismiss="modal">CLOSE</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END WRAPPER -->
+  </div>
+  <!-- START FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <span class="right"> Diseñado y Desarrollado por <a class="grey-text text-lighten-4" href="http://www.interglobalcs.com">InterGlobalCS</a></span>
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+  <!--materialize js-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <!--prism-->
+  <script type="text/javascript" src="js/plugins/prism/prism.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <!-- chartist -->
+  <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.js"></script>
+  <script type="text/javascript" src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <!--custom-script.js - Add your own theme custom JS-->
+  <script type="text/javascript" src="js/custom-script.js"></script>
+
+  <script src="js/vars.js"></script>
+  <script src="js/promotores_functions.js"></script>
+  <script>
+  $(document).ready(function() {
+    cargar_menu(id_user);
+  });
+
+  </script>
+</body>
+
+</html>

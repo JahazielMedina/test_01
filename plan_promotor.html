@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+  <title>Plan de trabajo</title>
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/custom/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/fullcalendar/css/fullcalendar.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/sweetalert/sweetalert.css" type="text/css" rel="stylesheet" />
+</head>
+
+
+<body>
+  <!-- Start Page Loading -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <header id="header" class="page-topbar">
+    <div class="navbar-fixed">
+      <nav class="navbar-color">
+        <div class="nav-wrapper">
+          <ul class="left">
+            <li>
+              <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div id="main">
+    <div class="wrapper">
+
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+          <div id="sidemenu_html"></div>
+        </ul>
+        <a data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan">
+          <i class="mdi-navigation-menu"></i>
+        </a>
+      </aside>
+
+      <section id="content" style="margin-bottom:220px;">
+        <div class="container">
+          <div class="section">
+            <div id="basic-tabs" class="section">
+              <h4 class="header">Plan de trabajo</h4>
+              <div class="row">
+                <div class="card light-blue">
+                  <div class="card-content white-text">
+                    <span class="card-title">Plan de trabajo</span>
+                    <p>En el calendario encontraras tú plan de trabajo mensual, semanal y diario</p>
+                  </div>
+                </div>
+                <div class="section">
+                  <div id="full-calendar">
+                    <div class="row">
+                      <center>
+                        <div class="col s12 m12 l12">
+                          <div id='calendar'></div>
+                        </div>
+                      </center>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <span class="right"> Diseñado y Desarrollado por <a class="grey-text text-lighten-4" href="http://www.interglobalcs.com">InterGlobalCS</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+  <!--materialize js-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <!--prism-->
+  <script type="text/javascript" src="js/plugins/prism/prism.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <!-- sparkline -->
+  <script type="text/javascript" src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+  <script type="text/javascript" src="js/plugins/sparkline/sparkline-script.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <!--custom-script.js - Add your own theme custom JS-->
+  <script type="text/javascript" src="js/custom-script.js"></script>
+  <!-- Calendar Script -->
+  <script type="text/javascript" src="js/plugins/sweetalert/sweetalert.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/lib/jquery-ui.custom.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/lib/moment.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/fullcalendar-script.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/js/lang-all.js"></script>
+  <script src="js/vars.js"></script>
+  <script src="js/workplan_functions.js"></script>
+  <script>
+  $(document).ready(function() {
+    cargar_menu(id_user);
+    get_calendar(id_user);
+  });
+
+  </script>
+</body>
+</html>

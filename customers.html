@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+  <title>Clientes</title>
+
+  <!-- Favicons-->
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
+
+
+  <!-- CORE CSS-->
+
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- Custome CSS-->
+  <link href="css/custom/custom.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/sweetalert/sweetalert.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Start Page Loading -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <!-- End Page Loading -->
+
+  <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+  <!-- START HEADER -->
+  <header id="header" class="page-topbar">
+    <!-- start header nav-->
+    <div class="navbar-fixed">
+      <nav class="navbar-color">
+        <div class="nav-wrapper">
+          <ul class="left">
+            <li>
+              <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- end header nav-->
+  </header>
+  <!-- END HEADER -->
+
+  <!-- START MAIN -->
+  <div id="main">
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+          <div id="sidemenu_html"></div>
+        </ul>
+        <a data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan">
+          <i class="mdi-navigation-menu"></i>
+        </a>
+      </aside>
+
+      <!-- END LEFT SIDEBAR NAV-->
+      <div id="breadcrumbs-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <h5 class="breadcrumbs-title">Clientes</h5>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="clientes">
+              <div class="title_right">
+                <div class="title_right">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                      <input class="form-control" name="buscar" type="search" placeholder="Buscar nombre..." autofocus>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <center>
+              <a class="waves-effect waves-light btn modal-trigger  light-blue " href="#modal_add_customer"><i class="mdi-image-control-point circle left"></i>Agregar cliente</a>
+            </center>
+          </div>
+        </div>
+      </div>
+      <!-- START CONTENT -->
+
+      <div id=contenido style="margin-bottom:150px;"></div>
+      <div class="col s12 m12 l12">
+        <div id="modal_add_customer" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Cliente</h4>
+            <div id="basic-form" class="section">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <div class="card-panel">
+                    <h4 class="header2">Información básica</h4>
+                    <div class="row">
+                      <form id="add_customer">
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col s12">
+                              <label for="Cadena">Cadena</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Cadena" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Nombre_tienda">Tienda</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Nombre_tienda" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Direccion">Dirección</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Direccion" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Determinante">Determinante</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Determinante" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Formato_tienda">Formato</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Formato_tienda" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Ciudad">Ciudad</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Ciudad" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Estado">Estado</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Estado" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Zona">Zona</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Zona" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Promotoria">Promotoria</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Promotoria" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Ruta">Ruta</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Ruta" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Promotor">Promotor</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Promotor" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="waves-effect waves-light btn light-blue modal-action">Agregar</button>
+                          <button type="button" class="waves-effect waves-light btn grey modal-action modal-close" data-dismiss="modal">CLOSE</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m12 l12">
+        <div id="modal_edit_customer" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Cliente</h4>
+            <div id="basic-form" class="section">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <div class="card-panel">
+                    <h4 class="header2">Información básica</h4>
+                    <div class="row">
+                      <form id="edit_customer">
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col s12">
+                              <label for="Cadena">Cadena</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Cadena_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Nombre_tienda">Tienda</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Nombre_tienda_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Direccion">Dirección</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Direccion_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Determinante">Determinante</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Determinante_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Formato_tienda">Formato</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Formato_tienda_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Ciudad">Ciudad</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Ciudad_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Estado">Estado</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Estado_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Zona">Zona</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Zona_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Promotoria">Promotoria</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Promotoria_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Ruta">Ruta</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Ruta_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col s12">
+                              <label for="Promotor">Promotor</label>
+                              <div class="form-group">
+                                <div class="form-line">
+                                  <input type="text" name="Promotor_edit" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="waves-effect waves-light btn light-blue modal-action">Agregar</button>
+                          <button type="button" class="waves-effect waves-light btn grey modal-action modal-close" data-dismiss="modal">CLOSE</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END WRAPPER -->
+
+  </div>
+  <!-- END MAIN -->
+
+  <!-- START FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <span class="right"> Diseñado y Desarrollado por <a class="grey-text text-lighten-4" href="http://www.interglobalcs.com">InterGlobalCS</a></span>
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+  <!--materialize js-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <!--prism-->
+  <script type="text/javascript" src="js/plugins/prism/prism.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <!-- chartist -->
+  <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.js"></script>
+  <script type="text/javascript" src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <!--custom-script.js - Add your own theme custom JS-->
+  <script type="text/javascript" src="js/custom-script.js"></script>
+
+  <script src="js/vars.js"></script>
+  <script src="js/customers_functions.js"></script>
+  <script>
+
+    $(document).ready(function() {
+      cargar_menu(id_user);
+
+      $('.mdb-select').material_select();
+    });
+  </script>
+
+
+</body>
+
+</html>

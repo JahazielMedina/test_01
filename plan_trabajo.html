@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--<meta http-equiv="Content-type" content="text/html; charset=utf-8" />-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <!--<meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">-->
+  <title>Olé | Más bella y punto.</title>
+
+  <!-- Favicons-->
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
+  <!-- CORE CSS-->
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- Custome CSS-->
+  <link href="css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/sweetalert/sweetalert.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/data-tables/css/jquery.dataTables.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/data-tables/css/responsive.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/fullcalendar/css/fullcalendar.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+</head>
+
+<style>
+  th {
+    font-size: 11px;
+  }
+
+  td {
+    font-size: 10px;
+  }
+
+  table tr.active {
+    background: #CCC;
+  }
+</style>
+
+<body>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <header id="header" class="page-topbar">
+    <div class="navbar-fixed">
+      <nav class="navbar-color">
+        <div class="nav-wrapper">
+          <ul class="left">
+            <li>
+              <h1 class="logo-wrapper">
+                <a href="index.html" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a>
+                <span class="logo-text">Olé | Más bella y punto</span>
+              </h1>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div id="main">
+    <div class="wrapper">
+
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+          <div id="sidemenu_html"></div>
+        </ul>
+        <a data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan">
+          <i class="mdi-navigation-menu"></i>
+        </a>
+      </aside>
+
+      <section id="content" style="margin-bottom:220px;">
+        <div class="container">
+          <div class="section">
+            <div id="basic-tabs" class="section">
+              <h4 class="header">Plan de trabajo</h4>
+              <div class="row">
+                <div class="col s12">
+                  <ul class="tabs tab-demo z-depth-1">
+                    <li class="tab col s12">
+                      <a class="active" href="#planning">Planeación</a>
+                    </li>
+                    <li class="tab col s12">
+                      <a href="#planned">Planeado</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col s12">
+                  <div id="planning" class="col s12">
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group pull-right top_search">
+                      <div class="input-group">
+                        <label for="buscar" class="form-control">Buscar promotor</label>
+                        <input class="form-control" id="buscar" name="buscar" type="search" placeholder="Buscar nombre..." autofocus />
+                      </div>
+                      <form class="col s12" id="plan_promotor">
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <input placeholder="Promotor..." id="nombre" name="nombre" type="text" class="validate">
+                            <input id="promotor_id" name="promotor_id" type="hidden">
+                            <input id="promotor" name="promotor" type="hidden">
+                            <input id="ruta_promotor" name="ruta_promotor" type="hidden">
+                            <label for="nombre">Promotor</label>
+                          </div>
+                          <div class="input-field col s6">
+                            <input placeholder="Matrícula..." id="matricula" name="matricula" type="text" class="validate">
+                            <label for="matricula">Matricula</label>
+                          </div>
+                          <div class="input-field col s4">
+                            <input placeholder="MM/DD/AAAA" id="dia" name="dia" type="text" class="validate">
+                            <label for="dia">Día</label>
+                          </div>
+                          <div class="input-field col s4">
+                            <input placeholder="Semana" id="week" name="week" type="text" class="validate">
+                            <label for="week"># Semana</label>
+                          </div>
+                        </div>
+                        <div class="full-calendar">
+                          <div class="row">
+                            <center>
+                              <div class="col s12 m12 l12">
+                                <div id='calendar'></div>
+                              </div>
+                            </center>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div id="planned" class="col s12">
+                    <div id="plan_de_trabajo" class="col-sm-12">
+                      <table class="table table-bordered table-striped table-hover js-basic-example dataTable" id="tabla">
+                        <thead>
+                          <tr class="bg-cyan">
+                            <th rowspan="1" colspan="1">Promotor</th>
+                            <th rowspan="1" colspan="1">Ruta</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal_prom" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-cyan">
+          <center>
+            <h4 class="modal-title" id="promotor_name"></h4>
+          </center>
+        </div>
+        <div id="contenido_due_modal" class="col s6 m6 l6">
+          <table class="table table-bordered table-striped table-hover js-basic-example dataTable" id="tabla_data">
+            <thead>
+              <tr class="bg-cyan">
+                <th>Día</th>
+                <th>Determinante</th>
+                <th>Tienda</th>
+                <th>Cadena</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="waves-effect waves-red btn-flat modal-action modal-close" onclick="clear_datatable('tabla_data');">Cerrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal1" class="modal col s12 modal-fixed-footer">
+    <div class="modal-content">
+      <div class="col-sm-12 table-responsive">
+        <input id="tiendas_id" name="tiendas_id" type="hidden">
+        <table class="table table-bordered table-striped table-hover js-basic-example dataTable" id="table_rutas">
+          <thead>
+            <tr class="bg-cyan">
+              <th rowspan="1" colspan="1">Determinante</th>
+              <th rowspan="1" colspan="1">Tienda</th>
+              <th rowspan="1" colspan="1">Cadena</th>
+              <th rowspan="1" colspan="1">Dirección</th>
+              <th rowspan="1" colspan="1">Ruta</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect waves-green btn-flat modal-action modal-close" onclick="send_form();">Guardar</a>
+      <a class="waves-effect waves-red btn-flat modal-action modal-close">Cerrar</a>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <span class="right"> Diseñado y Desarrollado por <a class="grey-text text-lighten-4" href="http://www.interglobalcs.com">InterGlobalCS</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+  <!--materialize js-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <!--prism-->
+  <script type="text/javascript" src="js/plugins/prism/prism.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <!--Moment Library moment.js-->
+  <script type="text/javascript" src="js/moment.js"></script>
+  <!-- DataTabler -->
+  <script type="text/javascript" src="js/plugins/data-tables/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/plugins/data-tables/data-tables-script.js"></script>
+  <script type="text/javascript" src="js/plugins/data-tables/js/dataTables.responsive.min.js"></script>
+  <!--jquery-validation-->
+  <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery-validation/additional-methods.min.js"></script>
+  <!--sweetalert -->
+  <script type="text/javascript" src="js/plugins/sweetalert/sweetalert.min.js"></script>
+  <!-- Calendar Script -->
+  <script type="text/javascript" src="js/plugins/fullcalendar/lib/jquery-ui.custom.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/lib/moment.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/js/lang-all.js"></script>
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="js/plugins.min.js"></script>
+  <!--custom-script.js - Add your own theme custom JS-->
+  <script type="text/javascript" src="js/custom-script.js"></script>
+  <!--plan_trabajo_funciones.js - Functions for Plan De Trabajo JS-->
+  <script type="text/javascript" src="js/plan_trabajo_funciones.js"></script>
+  <!--vars.js - Add custom functions JS-->
+  <script type="text/javascript" src="js/vars.js"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      consulta_permisos_admin(id_user);
+
+      cargar_menu(id_user);
+
+    });
+  </script>
+
+</body>
+
+</html>
